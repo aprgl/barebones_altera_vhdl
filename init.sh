@@ -3,7 +3,6 @@ PROJECT_NAME=''
 DEVICE=''
 FAMILY=''
 
-
 # Unnecessary Flair
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -45,6 +44,21 @@ Options:
 " >&2
   exit 0
 }
+
+## Pulled from https://gist.github.com/dciccale/5560837
+# ************************************************************************** #
+function parse_git_branch() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+function parse_git_hash() {
+  git rev-parse --short HEAD 2> /dev/null | sed "s/\(.*\)/@\1/"
+}
+
+GIT_BRANCH=$(parse_git_branch)$(parse_git_hash)
+# ************************************************************************** #
+
+echo "Building using "${GIT_BRANCH}
 
 path_test() {
     echo -n "Checking for a valid path to Quartus tools... " >&2
