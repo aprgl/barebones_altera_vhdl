@@ -2,6 +2,8 @@
 Barebones VHDL project files for Altera without the GUI.
 
 # Useage
+_Note_ Currently the script depends on the quartus tools being in the user's path.
+
 ## init.sh
 Creates a directory structure and required Quartus project files.
 
