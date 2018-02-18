@@ -106,7 +106,7 @@ fi
 
 if [ -z "$FAMILY" ]
 then
-    echo "Default device (Cyclone IV EP4CE22F17C6) selected">&2
+    echo "Default device (Cyclone IV E) selected">&2
     FAMILY="Cyclone IV E"
 fi
 
@@ -193,6 +193,8 @@ architecture rtl of '$PROJECT_NAME' is
     -------------------------------------------------------------------------
 
 end architecture rtl;' > $PROJECT_NAME/$PROJECT_NAME.vhd
+
+path_test
 
 echo "quartus_cmd "$PROJECT_NAME" -c "$PROJECT_NAME""> $PROJECT_NAME/build.sh
 chmod +755 $PROJECT_NAME/build.sh
