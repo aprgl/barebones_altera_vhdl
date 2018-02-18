@@ -58,7 +58,7 @@ function parse_git_hash() {
 GIT_BRANCH=$(parse_git_branch)$(parse_git_hash)
 # ************************************************************************** #
 
-echo "Building using "${GIT_BRANCH}
+echo "Building using "${GIT_BRANCH} >&2
 
 path_test() {
     echo -n "Checking for a valid path to Quartus tools... " >&2
