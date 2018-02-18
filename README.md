@@ -5,7 +5,7 @@ Barebones VHDL project files for Altera without the GUI.
 ## init.sh
 Creates a directory structure and required Quartus project files.
 
-foo
+foo (Project Folder)
 foo.qpf (Quartus Project File)
 foo.qsf (Quartus Settings File)
 foo.vhd (Top Level VHDL File)
